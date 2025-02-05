@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Display Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        h1 {
+            color: #1a202c;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #4a5568;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+<h1>Product List</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="product : ${products}">
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.price}"></td>
+        <td th:text="${product.category}"></td>
+    </tr>
+
+    </tbody>
+</table>
+<footer>Done by Arun</footer>
+</body>
+</html>
